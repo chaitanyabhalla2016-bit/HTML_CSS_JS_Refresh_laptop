@@ -12,3 +12,7 @@ html{
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    font-size: 1.8rem;
+}
