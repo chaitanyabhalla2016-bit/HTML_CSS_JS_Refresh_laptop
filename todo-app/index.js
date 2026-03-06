@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
         completed: 10,
         remaining: 5
     };
+    let categories = ['work', 'travel', 'personal'];
+    let priorities = ['high', 'medium', 'low'];
 
     const progress = () => Math.round(((tasksStats["total"] - tasksStats["remaining"]) / tasksStats["total"])*100);
 
@@ -17,4 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.querySelector('.progress-bar');
     progressBar.dataset.taskProgress = progress();
     progressBar.style.width = progress()+"%";
+    progressBar.textContent = progress()+"%";
 });

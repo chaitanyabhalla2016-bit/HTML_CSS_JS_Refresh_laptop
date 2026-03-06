@@ -19,6 +19,17 @@ body{
     font-size: 1.8rem;
 }
 
+.container{
+    width: 90%;
+    max-width: 160rem;
+    margin: auto;
+}
+
+.tasks-management-content{
+    width: 100%;
+    border: 0.01rem solid rgba(34,34,34,0.25);
+}
+
 .progress-bar{
     height: 2rem;
     background-color: var(--green-accent);
