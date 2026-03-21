@@ -5,40 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Task Manager</title>
     <link rel="stylesheet" href="./index.css">
+    <link rel="shortcut icon" href="./bcvfavicon.png" type="image/x-icon">
 </head>
 <body>
     <nav id="navbar">
         <div class="container">
             <div class="nav-content">
-                <span class="logo">smart tasks</span>
-                <button id="loginBtn" class="btn btn-success">login</button>
+                <h4 class="logo">smart tasks</h4>
+                <button id="loginBtn" class="btn btn-primary">login</button>
             </div>
         </div>
     </nav>
     <header id="header">
+        <div class="overlay"></div>
         <div class="container">
             <div class="header-content">
                 <h1>smart task manager</h1>
-                <p class="heero-tagline">Stay organized. Stay focused.</p>
-                <div class="hero-tasks-stats">
-                    <div class="hero-tasks-stat" data-task-stat="total"></div>
-                    <div class="hero-tasks-stat" data-task-stat="completed"></div>
-                    <div class="hero-tasks-stat" data-task-stat="remaining"></div>
-                    <div class="hero-tasks-stat" data-task-stat="progress"></div>
-                </div>
+                <p class="hero-tagline">Stay organized. Stay focused.</p>
             </div>
         </div>
     </header>
-    <section id="tasksManatement">
+    <section id="tasksManatementSection">
         <div class="container">
             <div class="tasks-management-content">
-                Add Task
-                [ Task title        ]
-                [ Category dropdown ]
-                [ Priority dropdown ]
-                [ Deadline date     ]
-                [ Add Task ]
-                <div class="progress-bar" data-task-progress=""></div>
+                <div class="tasks-stats-container">
+                    <div class="hero-tasks-stats">
+                        <div class="hero-tasks-stat badge btn-primary" data-task-stat="total"></div>
+                        <div class="hero-tasks-stat badge btn-success" data-task-stat="completed"></div>
+                        <div class="hero-tasks-stat badge btn-warning" data-task-stat="remaining"></div>
+                        <div class="hero-tasks-stat badge btn-danger" data-task-stat="cancelled"></div>
+                    </div>
+                    <div class="todays-tasks-container bg-dark">
+                        
+                    </div>
+                </div>
+                <div class="task-form-container bg-light">
+                    <form id="addTaskForm">
+                        <label for="taskTitle">
+                            <input type="text" id="taskTitle" name="taskTitle">
+                            task title
+                        </label>
+                        <label for="addTaskCategory">
+                            <select name="addTaskCategory" id="addTaskCategory"></select>
+                            category
+                        </label>
+                        <label for="addTaskPriority">
+                            <select name="addTaskPriority" id="addTaskPriority"></select>
+                            Priority
+                        </label>
+                        <label for="addTaskDeadLine">
+                            <input type="datetime-local" name="addTaskDeadLine" id="addTaskDeadLine">
+                            Deadline
+                        </label>
+                        <button id="addTaskBtn" class="btn btn-primary">add task</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="tasksListSection">
+        <div class="container">
+            <div class="tasks-list-content" id="tasksList">
+                <table class="tasks-list-table">
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Category</th>
+                            <th>Priority</th>
+                            <th>Due Date</th>
+                            <th>status</th>
+                            <th>action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="taskTableTbody">
+
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
